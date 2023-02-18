@@ -1,4 +1,5 @@
-import { randLatitude, randLongitude } from '@ngneat/falso';
+import { Company } from './Company';
+import { User } from './User';
 
 export class CustomMap {
   private googleMap: google.maps.Map;
@@ -12,4 +13,17 @@ export class CustomMap {
       }
     );
   }
+
+  // bad code
+  addUserMarker(user: User): void {
+    new google.maps.Marker({
+      position: {
+        lat: user.location.lat,
+        lng: user.location.lng,
+      },
+      map: this.googleMap,
+    });
+  }
+
+  addCompanyMarker(company: Company): void {}
 }

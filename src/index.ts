@@ -10,16 +10,17 @@ import { User } from './User';
 import { CustomMap } from './CustomMap';
 
 const user = new User(randFullName(), randLatitude(), randLongitude());
-const company = new Company(
-  randCompanyName(),
-  randCatchPhrase(),
-  randLatitude(),
-  randLongitude()
-);
+// const company = new Company(
+//   randCompanyName(),
+//   randCatchPhrase(),
+//   randLatitude(),
+//   randLongitude()
+// );
 
 // Initialize and add the map
 function initMap(): void {
-  new CustomMap('map', 0, 0);
+  const customMap = new CustomMap('map', 0, 0);
+  customMap.addUserMarker(user);
 }
 
 declare global {
