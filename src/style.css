@@ -1,5 +1,14 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Set the size of the div element that contains the map */
 #map {
-  height: 70vh; /* The height is 400 pixels */
+  height: 90vh; /* The height is 400 pixels */
   width: 70vw; /* The width is the width of the web page */
 }
