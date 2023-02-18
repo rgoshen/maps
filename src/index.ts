@@ -19,7 +19,7 @@ const company = new Company(
 
 // Initialize and add the map
 function initMap(): void {
-  new CustomMap('map');
+  new CustomMap('map', 0, 0);
 }
 
 declare global {
