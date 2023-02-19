@@ -14,25 +14,36 @@ export class CustomMap {
     );
   }
 
-  // bad code
-  addUserMarker(user: User): void {
+  // better code
+  addMarker(mapMarker: User | Company): void {
     new google.maps.Marker({
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
+        lat: mapMarker.location.lat,
+        lng: mapMarker.location.lng,
       },
       map: this.googleMap,
     });
   }
 
+  // bad code
+  // addUserMarker(user: User): void {
+  //   new google.maps.Marker({
+  //     position: {
+  //       lat: user.location.lat,
+  //       lng: user.location.lng,
+  //     },
+  //     map: this.googleMap,
+  //   });
+  // }
+
   //bad code
-  addCompanyMarker(company: Company): void {
-    new google.maps.Marker({
-      position: {
-        lat: company.location.lat,
-        lng: company.location.lng,
-      },
-      map: this.googleMap,
-    });
-  }
+  // addCompanyMarker(company: Company): void {
+  //   new google.maps.Marker({
+  //     position: {
+  //       lat: company.location.lat,
+  //       lng: company.location.lng,
+  //     },
+  //     map: this.googleMap,
+  //   });
+  // }
 }

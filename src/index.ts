@@ -20,8 +20,10 @@ const company = new Company(
 // Initialize and add the map
 function initMap(): void {
   const customMap = new CustomMap('map', 0, 0);
-  customMap.addUserMarker(user);
-  customMap.addUserMarker(company);
+  customMap.addMarker(user);
+  customMap.addMarker(company);
+  // customMap.addUserMarker(user);
+  // customMap.addUserMarker(company);
 }
 
 declare global {
