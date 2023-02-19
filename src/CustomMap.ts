@@ -24,12 +24,20 @@ export class CustomMap {
 
   // best code by adding interface type MapMarker
   addMarker(mapMarker: MapMarker): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: {
         lat: mapMarker.location.lat,
         lng: mapMarker.location.lng,
       },
       map: this.googleMap,
+    });
+
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'Hello World!',
+      });
+
+      infoWindow.open(this.googleMap, marker);
     });
   }
 
