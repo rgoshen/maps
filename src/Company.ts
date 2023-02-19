@@ -1,4 +1,6 @@
-export class Company {
+import { MapMarker } from './CustomMap';
+
+export class Company implements MapMarker {
   name: string;
   catchPhrase: string;
   location: {

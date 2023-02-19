@@ -1,4 +1,6 @@
-export class User {
+import { MapMarker } from './CustomMap';
+
+export class User implements MapMarker {
   name: string;
   location: {
     lat: number;

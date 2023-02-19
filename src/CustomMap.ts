@@ -2,7 +2,7 @@
 // on how they can be an argument to 'addMarker'
 
 // best solution
-interface MapMarker {
+export interface MapMarker {
   location: {
     lat: number;
     lng: number;
