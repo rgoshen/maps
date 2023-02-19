@@ -16,19 +16,23 @@ const company = new Company(
   randLatitude(),
   randLongitude()
 );
+const customMap = new CustomMap('map', 0, 0);
+
+customMap.addMarker(user);
+customMap.addMarker(company);
 
 // Initialize and add the map
-function initMap(): void {
-  const customMap = new CustomMap('map', 0, 0);
-  customMap.addMarker(user);
-  customMap.addMarker(company);
-  // customMap.addUserMarker(user);
-  // customMap.addUserMarker(company);
-}
+// function initMap(): void {
+//   const customMap = new CustomMap('map', 0, 0);
+//   customMap.addMarker(user);
+//   customMap.addMarker(company);
+//   // customMap.addUserMarker(user);
+//   // customMap.addUserMarker(company);
+// }
 
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
-window.initMap = initMap;
+// declare global {
+//   interface Window {
+//     initMap: () => void;
+//   }
+// }
+// window.initMap = initMap;

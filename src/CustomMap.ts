@@ -1,5 +1,13 @@
-import { Company } from './Company';
-import { User } from './User';
+// Instructions to every other class
+// on how they can be an argument to 'addMarker'
+
+// best solution
+interface MapMarker {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 
 export class CustomMap {
   private googleMap: google.maps.Map;
@@ -8,14 +16,14 @@ export class CustomMap {
     this.googleMap = new google.maps.Map(
       document.getElementById(divId) as HTMLElement,
       {
-        zoom: 2,
+        zoom: 1,
         center: { lat, lng },
       }
     );
   }
 
-  // better code
-  addMarker(mapMarker: User | Company): void {
+  // best code by adding interface type MapMarker
+  addMarker(mapMarker: MapMarker): void {
     new google.maps.Marker({
       position: {
         lat: mapMarker.location.lat,
@@ -24,6 +32,17 @@ export class CustomMap {
       map: this.googleMap,
     });
   }
+
+  // better code
+  // addMarker(mapMarker: User | Company): void {
+  //   new google.maps.Marker({
+  //     position: {
+  //       lat: mapMarker.location.lat,
+  //       lng: mapMarker.location.lng,
+  //     },
+  //     map: this.googleMap,
+  //   });
+  // }
 
   // bad code
   // addUserMarker(user: User): void {
